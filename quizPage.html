@@ -1,10 +1,39 @@
 <html>
 <head>
     <link rel="stylesheet" href="quizStyles.css">
+    <script src="slideshowScript.js"></script>
 </head>
 <body>
     <h1>WHAT DND CLASS ARE YOU?</h1>
     <p>Find out in this easy, 5-minute quiz!</p>
     <h2>WHAT IS DND?</h2>
+    <p>In Dungeons & Dragons, the players form an adventuring party who explore fantasy worlds together, embark on epic quests, and level up. The Dungeon Master (also known as the DM) is the game's referee and lead storyteller.</p>
+    <p>The collective creativity in your D&D game builds stories that you'll tell again and again—ranging from the stuff of legend to absurd incidents that'll make you laugh.</p>
+    <h2>HOW TO PLAY?</h2>
+    <p>At its heart, D&D is a storytelling game. Everything is your decision, from what you look like, to what you say, to how you act. The dice just help you along.</p>
+    <p>In D&D, each player creates a heroic character to represent them in the game. They might be a skilled fighter, a devout cleric, a deadly rogue, a spellcasting wizard, or something else entirely!</p>
+    <p>Together, the Dungeon Master and players create an exciting story where their bold adventurers confront deadly perils. Both the DM and players use dice throughout the game to determine the outcome of certain actions.</p>
+    <h2>CLASSES</h2>
+    <p>In standard DND, there are 12 basic classic classes for you to choose from. What class you choose determines your characters abilities and skills, ranging from magical spells or proficiency with weapons. Listed below is all 12 classes and a brief summary of the class.</p>
+    <div class="slideshowContainer">
+        <div class="mySlides fade">
+            <div class="pageNumber">1 / 3</div>
+            <img src="testImage.png" style="width: 100%">
+            <div class="captionText">Test Caption</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="pageNumber">2 / 2</div>
+            <img src="testImage2.png" style="width: 100%">
+            <div class="captionText">Test Caption2</div>
+        </div>
+
+        <a class="prevButton" onclick="plusSlides(-1)">❮</a>
+        <a class="nextButton" onclick="plusSlides(1)">❯</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span class="pageDot" onclick="currentSlide(1)"></span> 
+        <span class="pageDot" onclick="currentSlide(2)"></span> 
+    </div>
 </body>
 </html>
