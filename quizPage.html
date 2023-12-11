@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="quizStyles.css">
     <script src="slideshowScript.js"></script>
 </head>
-<body>
+<body onload="initializeImage()">
     <h1>WHAT DND CLASS ARE YOU?</h1>
     <p>Find out in this easy, 5-minute quiz!</p>
     <h2>WHAT IS DND?</h2>
@@ -22,9 +22,14 @@
             <div class="captionText">Test Caption</div>
         </div>
         <div class="mySlides fade">
-            <div class="pageNumber">2 / 2</div>
+            <div class="pageNumber">2 / 3</div>
             <img src="testImage2.png" style="width: 100%">
             <div class="captionText">Test Caption2</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="pageNumber">3 / 3</div>
+            <img src="testimage3.png" style="width: 100%">
+            <div class="captionText">Test Caption3</div>
         </div>
 
         <a class="prevButton" onclick="plusSlides(-1)">❮</a>
@@ -34,6 +39,7 @@
     <div style="text-align:center">
         <span class="pageDot" onclick="currentSlide(1)"></span> 
         <span class="pageDot" onclick="currentSlide(2)"></span> 
+        <span class="pageDot" onclick="currentSlide(3)"></span> 
     </div>
 </body>
 </html>

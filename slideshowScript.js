@@ -1,7 +1,11 @@
 let slideIndex = 1
 
+function initializeImage() {
+    currentSlide(1)
+}
+
 function plusSlides(n) {
-    showSlides(plusSlides += n);
+    showSlides(slideIndex += n);
 }
 
 function currentSlide(n) {
@@ -13,7 +17,7 @@ function showSlides(n) {
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("pageDot")
     if (n > slides.length) {
-        slideIndex = slides.length
+        slideIndex = 1
     }
     if (n < 1) {
         slideIndex = slides.length
