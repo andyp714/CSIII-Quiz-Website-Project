@@ -1,10 +1,24 @@
+<!--Flowerbox:
+    Author: Andy Pauley
+    Description: Project for my web design class to make a quiz. My quiz is themed on Dungeons and Dragons and uses JavaScript to collect input and give results
+    Date: Worked on 11/15-12/12:
+    Bugs: Slideshow is not consistent size, text goes over image when browser sized too thin, Can't reset/unanswer/unselect radio input questions
+    Challenges: Radio inputs, slider inputs, text input, tells user when not all questions are answered, image slideshow using javascript
+    Sources: Consulted w3 schools and geeksforgeeks for code assistance (look at google doc attached). Used DnDBeyond for text and images
+-->
+
+
+
 <html>
 <head>
+    <!--Imports stlye and js-->
     <link rel="stylesheet" href="quizStyles.css">
     <script src="slideshowScript.js"></script>
     <script src="processResults.js"></script>
 </head>
+<!--Make sure first image of  slideshow  is visible on start-->
 <body onload="initializeImage()">
+    <!--Text-->
     <h1>WHAT DND CLASS ARE YOU?</h1>
     <p>Find out in this easy, 5-minute quiz!</p>
     <h2>WHAT IS DND?</h2>
@@ -16,6 +30,7 @@
     <p>Together, the Dungeon Master and players create an exciting story where their bold adventurers confront deadly perils. Both the DM and players use dice throughout the game to determine the outcome of certain actions.</p>
     <h2>CLASSES</h2>
     <p>In standard D&D, there are 12 basic classic classes for you to choose from. What class you choose determines your characters abilities and skills, ranging from magical spells or proficiency with weapons. Listed below is all 12 classes and a brief summary of the class.</p>
+    <!--Slideshow containers that hold the page number, picture, caption and text. Same format for each, not visible except for current slide-->
     <div class="slideshowContainer">
         <div class="mySlides fade">
             <div class="pageNumber">1 / 12</div>
@@ -102,10 +117,14 @@
             <p style="text-align: center;">A scholarly magic-user capable of manipulating the structures of reality</p>
         </div>
 
+        <!--Buttons on side of slideshow that call a js function to move left or  right in the slideshow when clicked-->
+
         <a class="prevButton" onclick="plusSlides(-1)">❮</a>
         <a class="nextButton" onclick="plusSlides(1)">❯</a>
     </div>
     <br>
+
+    <!--Span pagedots, become active and switch slide when clicked by calling a js function-->
     <div style="text-align:center">
         <span class="pageDot" onclick="currentSlide(1)"></span> 
         <span class="pageDot" onclick="currentSlide(2)"></span> 
@@ -121,9 +140,11 @@
         <span class="pageDot" onclick="currentSlide(12)"></span>
     </div>
     <h2>QUESTIONS</h2>
+    <!--Q1-7 are radio inputs with labels. Value is set  1-4 depending on which radio clicked and is accessed by javascript to calculate results. same name radio inputs mean they are the same choice and can't both be selected-->
     <div>
         <h3>Q1:</h3>
         <p>What is your weapon of choice?</p>
+        <!--ID and name  used to  access through  javascript-->
         <input type="radio" id="q1a1" name="q1" value="1">
         <label for="q1a1">Sword</label><br>
         <input type="radio" id="q1a2" name="q1" value="2">
@@ -193,10 +214,13 @@
         <input type="radio" id="q7a4" name="q7" value="4">
         <label for="q7a4">Any range</label><br>
 
+        <!--Range slider (1-10) to answer question using a range input-->
         <h3>Q8:</h3>
         <p>On a scale of 1 (not at all) to 10 (very much so), how studious are you?</p>
         <input type="range" id="q8a1" name="q8" min="1" max="10" step="1">
+        <!--Span to show to user what current selected value is, changed  using javascript-->
         <p>Value: <span id="q8Value"></span></p>
+        <!--Javascript  to get the range current value and change the text to match that value whenever an input  change is detected-->
         <script>
             var slider1  = document.getElementById("q8a1");
             var sliderValue1 = document.getElementById("q8Value")
@@ -206,6 +230,7 @@
             }
         </script>
 
+    <!--Same as previous question-->
     <h3>Q9:</h3>
     <p>On a scale of 1 (not at all) to 10 (very much so), how religious are you?</p>
     <input type="range" id="q9a1" name="q9" min="1" max="10" step="1">
@@ -218,14 +243,17 @@
             sliderValue2.innerHTML = this.value
         }
     </script>
-
+    <!--text input to get users name and use it later in javascript-->
     <h3>Q10:</h3>
     <p>What is your name?</p>
     <input type="text" id="q10a1" name="q10">
 
     </div>
     <p>Click here to see your results!</p>
+    <!--hidden text that is only shown when submitted-->
     <p style="display: none; color: red;" id="resultCheck">Answer all questions to get results!</p>
+    <p style="display: none; color: green;" id="resultsText"></p>
+    <!--button that when clicked calculates the results-->
     <button type="button" onclick="getResults()">Submit</button>
 </body>
 </html>
