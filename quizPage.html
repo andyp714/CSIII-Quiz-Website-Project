@@ -2,6 +2,7 @@
 <head>
     <link rel="stylesheet" href="quizStyles.css">
     <script src="slideshowScript.js"></script>
+    <script src="processResults.js"></script>
 </head>
 <body onload="initializeImage()">
     <h1>WHAT DND CLASS ARE YOU?</h1>
@@ -180,7 +181,51 @@
         <label for="q6a3">Animals</label><br>
         <input type="radio" id="q6a4" name="q6" value="4">
         <label for="q6a4">God</label><br>
-    
+
+        <h3>Q7:</h3>
+        <p>In combat, at what range do you prefer to fight?</p>
+        <input type="radio" id="q7a1" name="q7" value="1">
+        <label for="q7a1">Up close</label><br>
+        <input type="radio" id="q7a2" name="q7" value="2">
+        <label for="q7a2">Medium range</label><br>
+        <input type="radio" id="q7a3" name="q7" value="3">
+        <label for="q7a3">Far away</label><br>
+        <input type="radio" id="q7a4" name="q7" value="4">
+        <label for="q7a4">Any range</label><br>
+
+        <h3>Q8:</h3>
+        <p>On a scale of 1 (not at all) to 10 (very much so), how studious are you?</p>
+        <input type="range" id="q8a1" name="q8" min="1" max="10" step="1">
+        <p>Value: <span id="q8Value"></span></p>
+        <script>
+            var slider1  = document.getElementById("q8a1");
+            var sliderValue1 = document.getElementById("q8Value")
+            sliderValue1.innerHTML = slider1.value;
+            slider1.oninput  = function()  {
+                sliderValue1.innerHTML = this.value
+            }
+        </script>
+
+    <h3>Q9:</h3>
+    <p>On a scale of 1 (not at all) to 10 (very much so), how religious are you?</p>
+    <input type="range" id="q9a1" name="q9" min="1" max="10" step="1">
+    <p>Value: <span id="q9Value"></span></p>
+    <script>
+        var slider2  = document.getElementById("q9a1");
+        var sliderValue2 = document.getElementById("q9Value")
+        sliderValue2.innerHTML = slider2.value;
+        slider2.oninput  = function()  {
+            sliderValue2.innerHTML = this.value
+        }
+    </script>
+
+    <h3>Q10:</h3>
+    <p>What is your name?</p>
+    <input type="text" id="q10a1" name="q10">
+
     </div>
+    <p>Click here to see your results!</p>
+    <button type="button" onclick="getResults()">Submit</button>
+    <p style="display: none;" id="resultCheck">Results Submitted!</p>
 </body>
 </html>
